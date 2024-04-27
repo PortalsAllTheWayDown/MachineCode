@@ -1,0 +1,47 @@
+MASM is by far the most commonly used assembler for writing x86-64 assembly language programs.
+If you encounter x86 source code in the real world, it will likely be written using MASM.
+
+There are other assemblers out there, including the GNU assembler (gas), Netwide Assembler (NASM), Flat Assembler (FASM) and others.
+
+These assemblers employ a different syntax from MASM (gas being the one most radically different).
+
+Learning the syntactical differences isnt that hard once you've mastered x86-64 assembly language using MASM.
+
+EXAMPLE:
+
+; Comments consist of all text from a semicolon character
+; to the end of the line.
+
+; The ".code" directive tells MASM that the statements following
+; this directive go in the section of memory reserved for machine
+; instructions (code).
+
+    .code
+
+; Here is the "main" function. (This example assumes that the
+; assembly language program is a stand-alone program with its
+; own main funciton.)
+
+main    PROC
+
+machine instructions go here
+
+    ret     ; Returns to caller
+
+main    ENDP
+
+; The END directive marks the end of the source file.
+
+    END
+
+
+
+A typical MASM program contains one or more sections representing the type of data appearing in memory.
+These sections begin with a MASM statement such as .code or .data
+Variables and other memory values appear in a data section.
+
+Machine instructions appear in procedures that appear within a code section.
+
+The .code statement is an example of an assembler directive, a statement that tells MASM something about the program but is not an actual x86-64 machine instruction.
+.code directive tells MASM to group the statements following it into a special section of memory reserved for machine instructions.
+
